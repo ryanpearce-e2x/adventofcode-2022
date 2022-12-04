@@ -22,8 +22,8 @@ for (let i = 0; i < assignmentPairs.length; i++) {
     const [lowerBound1, upperBound1] = getBounds(range1);
     const [lowerBound2, upperBound2] = getBounds(range2);
     const [array1, array2] = [createRange(lowerBound1, upperBound1), createRange(lowerBound2, upperBound2)];
-    const fullyContains = arrayPartiallyContains(array1, array2) || arrayPartiallyContains(array2, array1);
-    if(fullyContains) overlapCount++;
+    const partiallyContains = arrayPartiallyContains(array1, array2) || arrayPartiallyContains(array2, array1);
+    if(partiallyContains) overlapCount++;
 }
 
 console.log(overlapCount);
