@@ -13,17 +13,17 @@ class Directory {
     this.files = [];
   }
 
-  get calculateSize(): number {
+  calculateSize(): number {
     let total = 0;
     this.directories.forEach((dir) => {
-      total += dir.calculateSize;
+      total += dir.calculateSize();
     });
     total += this.files.map((x) => x.size).reduce((a, b) => a + b, 0);
     return total;
   }
 
   get size(): number {
-    return this.calculateSize;
+    return this.calculateSize();
   }
 
   get allDirectories(): Directory[] {
