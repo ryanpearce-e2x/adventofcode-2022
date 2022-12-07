@@ -28,8 +28,7 @@ export default class Day5 extends Day implements IDay {
 
     partOne(): Solution {
         this.setMap();
-        const moves = this.moves;
-        for (const move of moves) {
+        for (const move of this.moves) {
             const [amount, from, to] = this.getMoveCommands(move);
             const moveFrom = this.map[from - 1];
             const moveTo = this.map[to - 1];
@@ -46,8 +45,7 @@ export default class Day5 extends Day implements IDay {
 
     partTwo(): Solution {
         this.setMap();
-        const moves = this.moves;
-        for (const move of moves) {
+        for (const move of this.moves) {
             const [amount, from, to] = this.getMoveCommands(move);
             const moveFrom = this.map[from - 1];
             const moveTo = this.map[to - 1];
