@@ -57,12 +57,6 @@ export default class Day7 extends Day implements IDay {
   }
 
   terminalLines = this.input.split(/\n/);
-  dirMap: Record<string, any> = {};
-  dirArray: string[] = [];
-
-  get currentDir() {
-    return this.dirArray[this.dirArray.length - 1];
-  }
 
   partOne(): Solution {
     const rootDirectory = new Directory('/');
