@@ -13,17 +13,17 @@ class Directory {
     this.files = [];
   }
 
-  calculateSize(): number {
+  #calculateSize(): number {
     let total = 0;
     this.directories.forEach((dir) => {
-      total += dir.calculateSize();
+      total += dir.size;
     });
     total += this.files.map((x) => x.size).reduce((a, b) => a + b, 0);
     return total;
   }
 
   get size(): number {
-    return this.calculateSize();
+    return this.#calculateSize();
   }
 
   get allDirectories(): Directory[] {
@@ -57,6 +57,8 @@ export default class Day7 extends Day implements IDay {
   }
 
   terminalLines = this.input.split(/\n/);
+  totalDiskSpace = 70000000;
+  neededSpace = 30000000;
 
   buildRootDirectory(): Directory {
     const rootDirectory = new Directory('/');
@@ -90,6 +92,13 @@ export default class Day7 extends Day implements IDay {
   }
 
   partTwo(): Solution {
-    return '';
+    const rootDirectory = this.buildRootDirectory();
+    const totalSize = rootDirectory.size;
+    const spaceLeft = this.totalDiskSpace - totalSize;
+    const extraSpaceNeeded = this.neededSpace - spaceLeft;
+    const deletionCandidates = rootDirectory.allDirectories
+      .filter((x) => x.size >= extraSpaceNeeded)
+      .sort((a, b) => a.size - b.size);
+    return deletionCandidates[0].size;
   }
 }
