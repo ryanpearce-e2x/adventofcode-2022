@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "npx ts-node index.ts"
+    "start": "npx ts-node index.ts",
+    "lint": "eslint . --ext .ts"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,11 @@
   "homepage": "https://github.com/ryanpearce-e2x/adventofcode-2022#readme",
   "devDependencies": {
     "@types/node": "^18.11.11",
+    "@typescript-eslint/eslint-plugin": "^5.45.1",
+    "@typescript-eslint/parser": "^5.45.1",
+    "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "typescript": "^4.9.3"
   }
 }
