@@ -58,7 +58,7 @@ export default class Day7 extends Day implements IDay {
 
   terminalLines = this.input.split(/\n/);
 
-  partOne(): Solution {
+  buildRootDirectory(): Directory {
     const rootDirectory = new Directory('/');
     let currentDirectory: Directory | undefined = rootDirectory;
     this.terminalLines.forEach((line) => {
@@ -80,6 +80,11 @@ export default class Day7 extends Day implements IDay {
         currentDirectory?.addFile(new File(fileSize));
       }
     });
+    return rootDirectory;
+  }
+
+  partOne(): Solution {
+    const rootDirectory = this.buildRootDirectory();
     const oneHundredKDirs = rootDirectory.allDirectories.filter((x) => x.size <= 100000);
     return oneHundredKDirs.map((x) => x.size).reduce((a, b) => a + b);
   }
