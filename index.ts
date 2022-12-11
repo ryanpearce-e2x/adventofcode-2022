@@ -1,4 +1,4 @@
-import { Day1, Day2, Day3, Day4, Day5, Day6, Day7, Day8 } from './src/days';
+import { Day1, Day2, Day3, Day4, Day5, Day6, Day7, Day8, Day9, Day10, Day11 } from './src/days';
 
 const currentDays = [
   new Day1(),
@@ -9,6 +9,9 @@ const currentDays = [
   new Day6(),
   new Day7(),
   new Day8(),
+  new Day9(),
+  new Day10(),
+  new Day11(),
 ];
 
 currentDays.forEach((day, i) => {
