@@ -24,7 +24,7 @@ export default class Day12 extends Day implements IDay {
 
   parseMap = ([...input]: string): [number[], number, number, number] => {
     const rowLength = input.indexOf('\n');
-    const map = input.filter((c) => c !== '\n').map((v, i) => v.charCodeAt(0));
+    const map = input.filter((c) => c !== '\n').map((v) => v.charCodeAt(0));
 
     const [start, end] = ['S', 'E']
       .map((v) => v.charCodeAt(0))
@@ -43,7 +43,7 @@ export default class Day12 extends Day implements IDay {
   }
 
   partTwo(): Solution {
-    return (([map, rowLength, _, end]) =>
+    return (([map, rowLength, , end]) =>
       map
         .map((c: any, i: any) => [c, i])
         .filter(([c]) => c === 'a'.charCodeAt(0))

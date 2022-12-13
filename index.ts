@@ -11,6 +11,7 @@ import {
   Day10,
   Day11,
   Day12,
+  Day13,
 } from './src/days';
 
 const currentDays = [
@@ -26,6 +27,7 @@ const currentDays = [
   new Day10(),
   new Day11(),
   new Day12(),
+  new Day13(),
 ];
 
 currentDays.forEach((day, i) => {
